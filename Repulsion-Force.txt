@@ -1,0 +1,89 @@
+
+package repulsion.force;
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+//---------------------------------------------------------------------
+// Title: Repulsion-Force
+// Date: 5/10/2013
+// Language: Java
+// Programmers Involved: Christopher Adams, Bertie Chapman
+// --------------------------------------------------------------------
+// Description:
+// Compute the repulsion force for two electrons in 2D space. Assuming
+// that the two particles have the same masss and charge. This uses
+// the Colomb's law. 
+//
+// The function that computes the force is as follows: 
+//   Force = (Particle 1's mass x Particle 2's mass) / Distance^2
+//
+// To compute the distance between two points in a 2D space :
+//   deltaX = (Particle 1's x-position - Particle 2's x-position)
+//   deltaY = (Particle 1's y-position - Particle 2's y-position)
+//   Distance = Square-root( deltaX * deltaX + deltaY * deltaY )
+//
+// Input:
+// Given two rows of numbers. Each row represents a particle.
+// Mass , x-position , and y-position
+// Mass will range , inclusively , from 0.001 to 100.0.
+// the x and y positions will range inclusively from -100.0 to 100.0
+//
+// Output : 
+// prints the force as a float at a minimum three decimal places precision
+
+public class RepulsionForce 
+{
+    
+    public static void main(String[] args) 
+    {
+        System.out.println("First particle: (Mass , x , y)");
+        Scanner scan = new Scanner(System.in);
+        String particle1 = scan.nextLine();
+        System.out.println("Second particle: (Mass , x , y)");
+        Scanner scan2 = new Scanner(System.in);
+        String particle2 = scan2.nextLine();
+        
+        Float [] p1AttFloat = new Float[3];
+        Float [] p2AttFloat = new Float[3];  
+        
+        if(particle1.contains(",") && particle2.contains(","))
+        {
+           String [] p1AttString = particle1.split(",");
+           String [] p2AttString = particle2.split(",");
+           
+           
+           for(int i=0; i<3;i++)
+           {
+               p1AttFloat[i] = Float.valueOf(p1AttString[i]);
+               p2AttFloat[i] = Float.valueOf(p2AttString[i]);
+           }
+
+           Float Force = + computeForce(p1AttFloat[0],p1AttFloat[1],
+                   p1AttFloat[2], p2AttFloat[0],p2AttFloat[1],p2AttFloat[2]);
+           
+           DecimalFormat df = new DecimalFormat();
+           df.setMinimumFractionDigits(3);
+           System.out.println("Force = " + df.format((double)Force));
+        }
+        else
+        {
+            System.out.println("Please restart and enter in the correct format");
+        }
+        
+    }
+    
+    public static float computeForce(float mass1, float x1 , float y1, float mass2
+            , float x2, float y2)
+    {
+        float deltaX,deltaY,distance,force;
+        
+        deltaX = x1 - x2;
+        deltaY = y1 - y2;
+        distance = (deltaX * deltaX) + (deltaY * deltaY);
+        
+        force = (mass1 * mass2) / distance;
+        
+        return force;
+    }
+}
