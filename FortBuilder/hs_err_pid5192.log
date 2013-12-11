@@ -1,0 +1,265 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0000000002b962c8, pid=5192, tid=5004
+#
+# JRE version: 7.0_05-b06
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (23.1-b03 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# J  fortbuilder.FortBuilder.gameUpdate()V
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000112a5000):  JavaThread "Thread-3" [_thread_in_Java, id=5004, stack(0x00000000158e0000,0x00000000159e0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000000000000014
+
+Registers:
+RAX=0x0000000000000014, RBX=0x0000000000000013, RCX=0x00000000f81347a0, RDX=0x00000000c08a3380
+RSP=0x00000000159df140, RBP=0x00000000f8114832, RSI=0x0000000003e04d1e, RDI=0x00000000f81347a0
+R8 =0x00000000c08a4190, R9 =0x0000000000000001, R10=0x0000000000000026, R11=0x0000000000000027
+R12=0x0000000000000000, R13=0x0000000000000027, R14=0x00000000c07298b8, R15=0x00000000112a5000
+RIP=0x0000000002b962c8, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x00000000159df140)
+0x00000000159df140:   00000007c0748e20 0000000002b2acca
+0x00000000159df150:   00000000159df150 0000000002b95f90
+0x00000000159df160:   0000001300000027 00000007c07298b8
+0x00000000159df170:   0000002800000012 000000073c458380
+0x00000000159df180:   0000000000000000 00000000159df1b0
+0x00000000159df190:   00000000159df1f8 0000000002b161f8
+0x00000000159df1a0:   00000000159df1f8 0000000002b161f8
+0x00000000159df1b0:   00000007c07298b8 00000000159df1b8
+0x00000000159df1c0:   000000073c457cdc 00000000159df258
+0x00000000159df1d0:   000000073c4bbb78 0000000000000000
+0x00000000159df1e0:   000000073c457d88 00000000159df1b0
+0x00000000159df1f0:   00000000159df258 00000000159df2a0
+0x00000000159df200:   0000000002b168a6 00000007c0ea5f38
+0x00000000159df210:   0000000000040434 0000000000000000
+0x00000000159df220:   00008c02e109027e 0000000000000000
+0x00000000159df230:   000000000153158e 0000000000000000 
+
+Instructions: (pc=0x0000000002b962c8)
+0x0000000002b962a8:   45 3b d9 0f 83 9c 02 00 00 4d 8d 04 ec 45 8b 4c
+0x0000000002b962b8:   b8 14 45 85 c9 0f 84 27 02 00 00 43 8b 7c 98 10
+0x0000000002b962c8:   47 8b 44 cc 0c 45 85 c0 0f 84 93 fe ff ff 8b 6c
+0x0000000002b962d8:   9a 0c 45 8b 4c ec 0c 45 3b d9 0f 83 a5 02 00 00 
+
+
+Register to memory mapping:
+
+RAX=0x0000000000000014 is an unknown value
+RBX=0x0000000000000013 is an unknown value
+RCX=0x00000000f81347a0 is an unknown value
+RDX=0x00000000c08a3380 is an oop
+[[Lfortbuilder.Block; 
+ - klass: 'fortbuilder/Block'[][]
+ - length: 60
+RSP=0x00000000159df140 is pointing into the stack for thread: 0x00000000112a5000
+RBP=0x00000000f8114832 is an unknown value
+RSI=0x0000000003e04d1e is an unknown value
+RDI=0x00000000f81347a0 is an unknown value
+R8 =0x00000000c08a4190 is an oop
+[Lfortbuilder.Block; 
+ - klass: 'fortbuilder/Block'[]
+ - length: 40
+R9 =0x0000000000000001 is an unknown value
+R10=0x0000000000000026 is an unknown value
+R11=0x0000000000000027 is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13=0x0000000000000027 is an unknown value
+R14=0x00000000c07298b8 is an oop
+fortbuilder.FortBuilder 
+ - klass: 'fortbuilder/FortBuilder'
+R15=0x00000000112a5000 is a thread
+
+
+Stack: [0x00000000158e0000,0x00000000159e0000],  sp=0x00000000159df140,  free space=1020k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+J  fortbuilder.FortBuilder.gameUpdate()V
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000014f61800 JavaThread "DestroyJavaVM" [_thread_blocked, id=6576, stack(0x0000000002a10000,0x0000000002b10000)]
+=>0x00000000112a5000 JavaThread "Thread-3" [_thread_in_Java, id=5004, stack(0x00000000158e0000,0x00000000159e0000)]
+  0x0000000011113000 JavaThread "D3D Screen Updater" daemon [_thread_blocked, id=5872, stack(0x0000000014960000,0x0000000014a60000)]
+  0x00000000110e9800 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=6532, stack(0x0000000013a80000,0x0000000013b80000)]
+  0x000000001109c800 JavaThread "AWT-Windows" daemon [_thread_in_native, id=3160, stack(0x0000000011ed0000,0x0000000011fd0000)]
+  0x000000001109a000 JavaThread "AWT-Shutdown" [_thread_blocked, id=6660, stack(0x0000000011c80000,0x0000000011d80000)]
+  0x0000000011099000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=4788, stack(0x0000000011b60000,0x0000000011c60000)]
+  0x0000000010f64800 JavaThread "Service Thread" daemon [_thread_blocked, id=4852, stack(0x0000000001e00000,0x0000000001f00000)]
+  0x0000000010f55800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=7136, stack(0x0000000011680000,0x0000000011780000)]
+  0x0000000010f3e000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=3132, stack(0x0000000011490000,0x0000000011590000)]
+  0x0000000010f3d800 JavaThread "Attach Listener" daemon [_thread_blocked, id=5276, stack(0x0000000001c60000,0x0000000001d60000)]
+  0x0000000010f3c800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6316, stack(0x0000000011370000,0x0000000011470000)]
+  0x000000000ee59800 JavaThread "Finalizer" daemon [_thread_blocked, id=6964, stack(0x0000000010ad0000,0x0000000010bd0000)]
+  0x000000000ee51800 JavaThread "Reference Handler" daemon [_thread_blocked, id=2240, stack(0x0000000010df0000,0x0000000010ef0000)]
+
+Other Threads:
+  0x000000000ee49800 VMThread [stack: 0x0000000010be0000,0x0000000010ce0000] [id=3016]
+  0x0000000010f6d000 WatcherThread [stack: 0x0000000011880000,0x0000000011980000] [id=6516]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 56960K, used 9063K [0x00000000c06b0000, 0x00000000c4640000, 0x0000000000000000)
+  eden space 48832K, 18% used [0x00000000c06b0000,0x00000000c0f89ec0,0x00000000c3660000)
+  from space 8128K, 0% used [0x00000000c3e50000,0x00000000c3e50000,0x00000000c4640000)
+  to   space 8128K, 0% used [0x00000000c3660000,0x00000000c3660000,0x00000000c3e50000)
+ ParOldGen       total 130240K, used 0K [0x0000000041400000, 0x0000000049330000, 0x00000000c06b0000)
+  object space 130240K, 0% used [0x0000000041400000,0x0000000041400000,0x0000000049330000)
+ PSPermGen       total 21248K, used 9077K [0x000000003c200000, 0x000000003d6c0000, 0x0000000041400000)
+  object space 21248K, 42% used [0x000000003c200000,0x000000003cadd648,0x000000003d6c0000)
+
+Code Cache  [0x0000000002b10000, 0x0000000002d80000, 0x0000000005b10000)
+ total_blobs=435 nmethods=35 adapters=352 free_code_cache=48587Kb largest_free_block=49734720
+
+Compilation events (10 events):
+Event: 1.831 Thread 0x0000000010f3e000   28             java.util.IdentityHashMap::clear (39 bytes)
+Event: 1.833 Thread 0x0000000010f3e000 nmethod 28 0x0000000002b98650 code [0x0000000002b98780, 0x0000000002b98898]
+Event: 2.228 Thread 0x0000000010f55800   29             java.util.IdentityHashMap$IdentityHashMapIterator::hasNext (50 bytes)
+Event: 2.231 Thread 0x0000000010f55800 nmethod 29 0x0000000002b98290 code [0x0000000002b983c0, 0x0000000002b98578]
+Event: 4.296 Thread 0x0000000010f3e000   31             java.util.HashMap::clear (39 bytes)
+Event: 4.299 Thread 0x0000000010f3e000 nmethod 31 0x0000000002b9dd90 code [0x0000000002b9dec0, 0x0000000002b9dfd8]
+Event: 4.694 Thread 0x0000000010f55800   32             java.util.concurrent.locks.AbstractOwnableSynchronizer::setExclusiveOwnerThread (6 bytes)
+Event: 4.695 Thread 0x0000000010f55800 nmethod 32 0x0000000002b9db90 code [0x0000000002b9dcc0, 0x0000000002b9dd38]
+Event: 5.328 Thread 0x0000000010f3e000    3 %           fortbuilder.FortBuilder::gameUpdate @ 12 (337 bytes)
+Event: 5.340 Thread 0x0000000010f3e000 nmethod 3% 0x0000000002b95f90 code [0x0000000002b96120, 0x0000000002b966c8]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (5 events):
+Event: 1.435 Thread 0x00000000110e9800 Uncommon trap -83 fr.pc 0x0000000002b97344
+Event: 1.435 Thread 0x00000000110e9800 Uncommon trap -83 fr.pc 0x0000000002b930a4
+Event: 5.328 Thread 0x00000000112a5000 Uncommon trap -10 fr.pc 0x0000000002b94a78
+Event: 5.328 Thread 0x00000000112a5000 Uncommon trap -10 fr.pc 0x0000000002b94a78
+Event: 5.328 Thread 0x00000000112a5000 Uncommon trap -10 fr.pc 0x0000000002b94a78
+
+Internal exceptions (10 events):
+Event: 5.338 Thread 0x00000000112a5000 Threw 0x00000000c0ea5478 at C:\jdk7u1_64p\jdk7u5\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp:347
+Event: 5.338 Thread 0x00000000112a5000 Threw 0x00000000c0ea55d0 at C:\jdk7u1_64p\jdk7u5\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp:347
+Event: 5.339 Thread 0x00000000112a5000 Threw 0x00000000c0ea5728 at C:\jdk7u1_64p\jdk7u5\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp:347
+Event: 5.339 Thread 0x00000000112a5000 Threw 0x00000000c0ea5880 at C:\jdk7u1_64p\jdk7u5\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp:347
+Event: 5.339 Thread 0x00000000112a5000 Threw 0x00000000c0ea59d8 at C:\jdk7u1_64p\jdk7u5\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp:347
+Event: 5.339 Thread 0x00000000112a5000 Threw 0x00000000c0ea5b30 at C:\jdk7u1_64p\jdk7u5\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp:347
+Event: 5.340 Thread 0x00000000112a5000 Threw 0x00000000c0ea5c88 at C:\jdk7u1_64p\jdk7u5\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp:347
+Event: 5.340 Thread 0x00000000112a5000 Threw 0x00000000c0ea5de0 at C:\jdk7u1_64p\jdk7u5\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp:347
+Event: 5.340 Thread 0x00000000112a5000 Threw 0x00000000c0ea5f38 at C:\jdk7u1_64p\jdk7u5\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp:347
+Event: 5.340 Thread 0x00000000112a5000 Implicit null exception at 0x0000000002b962c8 to 0x0000000000000000
+
+Events (10 events):
+Event: 4.473 loading class 0x00000000026c09d0
+Event: 4.473 loading class 0x00000000026c0c10
+Event: 4.473 loading class 0x00000000026c0c10 done
+Event: 4.473 loading class 0x00000000026c09d0 done
+Event: 5.328 Thread 0x00000000112a5000 DEOPT PACKING pc=0x0000000002b94a78 sp=0x00000000159df150
+Event: 5.328 Thread 0x00000000112a5000 DEOPT UNPACKING pc=0x0000000002b49164 sp=0x00000000159df108 mode 2
+Event: 5.328 Thread 0x00000000112a5000 DEOPT PACKING pc=0x0000000002b94a78 sp=0x00000000159df150
+Event: 5.328 Thread 0x00000000112a5000 DEOPT UNPACKING pc=0x0000000002b49164 sp=0x00000000159df108 mode 2
+Event: 5.328 Thread 0x00000000112a5000 DEOPT PACKING pc=0x0000000002b94a78 sp=0x00000000159df150
+Event: 5.328 Thread 0x00000000112a5000 DEOPT UNPACKING pc=0x0000000002b49164 sp=0x00000000159df108 mode 2
+
+
+Dynamic libraries:
+0x000000003fd10000 - 0x000000003fd43000 	C:\Program Files\Java\jdk1.7.0_05\bin\java.exe
+0x0000000077ad0000 - 0x0000000077c7b000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00000000778b0000 - 0x00000000779cf000 	C:\Windows\system32\kernel32.dll
+0x00000000fdcf0000 - 0x00000000fdd5b000 	C:\Windows\system32\KERNELBASE.dll
+0x00000000ff960000 - 0x00000000ffa3b000 	C:\Windows\system32\ADVAPI32.dll
+0x00000000fe5a0000 - 0x00000000fe63f000 	C:\Windows\system32\msvcrt.dll
+0x00000000fe3d0000 - 0x00000000fe3ef000 	C:\Windows\SYSTEM32\sechost.dll
+0x00000000ff680000 - 0x00000000ff7ae000 	C:\Windows\system32\RPCRT4.dll
+0x00000000779d0000 - 0x0000000077aca000 	C:\Windows\system32\USER32.dll
+0x00000000ff400000 - 0x00000000ff467000 	C:\Windows\system32\GDI32.dll
+0x00000000ff5f0000 - 0x00000000ff5fe000 	C:\Windows\system32\LPK.dll
+0x00000000fe3f0000 - 0x00000000fe4ba000 	C:\Windows\system32\USP10.dll
+0x00000000fc140000 - 0x00000000fc334000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7600.16385_none_fa645303170382f6\COMCTL32.dll
+0x00000000ff600000 - 0x00000000ff671000 	C:\Windows\system32\SHLWAPI.dll
+0x00000000fe640000 - 0x00000000fe66e000 	C:\Windows\system32\IMM32.DLL
+0x00000000ff7b0000 - 0x00000000ff8b9000 	C:\Windows\system32\MSCTF.dll
+0x00000000fd460000 - 0x00000000fd4a4000 	C:\Windows\system32\nvinitx.dll
+0x00000000791c0000 - 0x0000000079291000 	C:\Program Files\Java\jdk1.7.0_05\jre\bin\msvcr100.dll
+0x000000006d340000 - 0x000000006da5a000 	C:\Program Files\Java\jdk1.7.0_05\jre\bin\server\jvm.dll
+0x00000000f3030000 - 0x00000000f3039000 	C:\Windows\system32\WSOCK32.dll
+0x00000000ffa40000 - 0x00000000ffa8d000 	C:\Windows\system32\WS2_32.dll
+0x00000000fe3a0000 - 0x00000000fe3a8000 	C:\Windows\system32\NSI.dll
+0x00000000fb260000 - 0x00000000fb29b000 	C:\Windows\system32\WINMM.dll
+0x0000000077c90000 - 0x0000000077c97000 	C:\Windows\system32\PSAPI.DLL
+0x000000006d1b0000 - 0x000000006d1bf000 	C:\Program Files\Java\jdk1.7.0_05\jre\bin\verify.dll
+0x000000006cf80000 - 0x000000006cfa8000 	C:\Program Files\Java\jdk1.7.0_05\jre\bin\java.dll
+0x000000006cea0000 - 0x000000006ceb5000 	C:\Program Files\Java\jdk1.7.0_05\jre\bin\zip.dll
+0x0000000011980000 - 0x0000000011b14000 	C:\Program Files\Java\jdk1.7.0_05\jre\bin\awt.dll
+0x00000000fe4c0000 - 0x00000000fe597000 	C:\Windows\system32\OLEAUT32.dll
+0x00000000fe190000 - 0x00000000fe391000 	C:\Windows\system32\ole32.dll
+0x00000000fca70000 - 0x00000000fca88000 	C:\Windows\system32\DWMAPI.DLL
+0x00000000fbf60000 - 0x00000000fbfb6000 	C:\Windows\system32\uxtheme.dll
+0x00000000fd880000 - 0x00000000fd88f000 	C:\Windows\system32\CRYPTBASE.dll
+0x00000000e82a0000 - 0x00000000e849f000 	C:\Windows\system32\d3d9.dll
+0x00000000fcae0000 - 0x00000000fcaec000 	C:\Windows\system32\VERSION.dll
+0x00000000f6d50000 - 0x00000000f6d57000 	C:\Windows\system32\d3d8thk.dll
+0x00000000e0350000 - 0x00000000e1439000 	C:\Windows\system32\nvd3dumx.dll
+0x00000000fc7b0000 - 0x00000000fc7dc000 	C:\Windows\system32\powrprof.dll
+0x00000000fdfb0000 - 0x00000000fe187000 	C:\Windows\system32\SETUPAPI.dll
+0x00000000fdb00000 - 0x00000000fdb36000 	C:\Windows\system32\CFGMGR32.dll
+0x00000000fdae0000 - 0x00000000fdafa000 	C:\Windows\system32\DEVOBJ.dll
+0x00000000fe670000 - 0x00000000ff3f6000 	C:\Windows\system32\SHELL32.dll
+0x000000006d170000 - 0x000000006d1a4000 	C:\Program Files\Java\jdk1.7.0_05\jre\bin\fontmanager.dll
+0x00000000ff8c0000 - 0x00000000ff959000 	C:\Windows\system32\CLBCatQ.DLL
+0x00000000fd4d0000 - 0x00000000fd4e7000 	C:\Windows\system32\CRYPTSP.dll
+0x00000000fcf40000 - 0x00000000fcf87000 	C:\Windows\system32\rsaenh.dll
+0x00000000fccd0000 - 0x00000000fccee000 	C:\Windows\system32\USERENV.dll
+0x00000000fda30000 - 0x00000000fda3f000 	C:\Windows\system32\profapi.dll
+0x0000000001d60000 - 0x0000000001d79000 	C:\Program Files\Java\jdk1.7.0_05\jre\bin\net.dll
+0x00000000fd1d0000 - 0x00000000fd224000 	C:\Windows\system32\mswsock.dll
+0x00000000fd4c0000 - 0x00000000fd4c7000 	C:\Windows\System32\wship6.dll
+0x00000000fb2a0000 - 0x00000000fb2b5000 	C:\Windows\system32\NLAapi.dll
+0x00000000fd060000 - 0x00000000fd0bb000 	C:\Windows\system32\DNSAPI.dll
+0x00000000f6b70000 - 0x00000000f6b7b000 	C:\Windows\System32\winrnr.dll
+0x00000000f6b50000 - 0x00000000f6b65000 	C:\Windows\system32\napinsp.dll
+0x00000000f6b30000 - 0x00000000f6b49000 	C:\Windows\system32\pnrpnsp.dll
+0x00000000721f0000 - 0x0000000072216000 	C:\Program Files\Bonjour\mdnsNSP.dll
+0x00000000fa620000 - 0x00000000fa647000 	C:\Windows\system32\Iphlpapi.DLL
+0x00000000fb020000 - 0x00000000fb02b000 	C:\Windows\system32\WINNSI.DLL
+0x00000000f87b0000 - 0x00000000f87df000 	C:\Program Files\Common Files\Microsoft Shared\Windows Live\WLIDNSP.DLL
+0x00000000fcbb0000 - 0x00000000fcbb7000 	C:\Windows\System32\wshtcpip.dll
+0x00000000f8780000 - 0x00000000f8788000 	C:\Windows\system32\rasadhlp.dll
+0x00000000fa4c0000 - 0x00000000fa513000 	C:\Windows\System32\fwpuclnt.dll
+0x000000006d130000 - 0x000000006d141000 	C:\Program Files\Java\jdk1.7.0_05\jre\bin\nio.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: fortbuilder.FortBuilder
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\TortoiseSVN\bin
+USERNAME=Chris
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7600 
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 12498040k(7409964k free), swap 24994180k(17968140k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (23.1-b03) for windows-amd64 JRE (1.7.0_05-b06), built on Jun 27 2012 00:54:58 by "java_re" with unknown MS VC++:1600
+
+time: Fri Dec 06 22:13:42 2013
+elapsed time: 5 seconds
+
